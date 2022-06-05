@@ -1,0 +1,78 @@
+.quizes-page__heading {
+  @include carbon--type-style('productive-heading-04');
+  padding-bottom: $spacing-08;
+}
+
+.quizes-page__r1 {
+  padding-top: $spacing-08;
+  padding-bottom: $spacing-08;
+}
+
+svg.online-status {
+  fill: green;
+}
+
+svg.offline-status {
+  fill: gray;
+}
+
+.top-messages {
+  vertical-align: middle;
+  font-weight: bold;
+  position: relative;
+  bottom: 7px;
+}
+
+.top-messages-small {
+  vertical-align: middle;
+  font-weight: bold;
+  position: relative;
+  bottom: 7px;
+}
+
+.button-ready {
+  position: relative;
+  bottom: 19px;
+}
+.quizes-page__panel {
+  padding-top: $spacing-08;
+  padding-bottom: $spacing-08;
+  padding-left: $spacing-05;
+}
+
+.quizes-page__answer_button {
+  text-align: center; //TODO: Delete
+}
+
+.quizes-page__answer_button_row {
+  padding-bottom: $spacing-12;
+}
+
+.quizes-page__question {
+  @include carbon--type-style('productive-heading-05');
+  padding-bottom: $spacing-12;
+  padding-top: $spacing-06;
+  background-color: #f4f4f4;
+}
+
+.quizes-page__question_small {
+  padding-bottom: $spacing-05;
+  @include carbon--type-style('productive-heading-03');
+}
+
+.quizes-page__options {
+  padding-bottom: $spacing-12;
+  padding-top: $spacing-06;
+  background-color: white;
+  @include carbon--type-style('productive-heading-03');
+}
+
+.quizes-page__option {
+  padding-top: $spacing-06;
+  padding-bottom: $spacing-12;
+  @include carbon--type-style('productive-heading-03');
+}
+
+.finish-message {
+  @include carbon--type-style('productive-heading-03');
+}

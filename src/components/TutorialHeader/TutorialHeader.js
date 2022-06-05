@@ -23,7 +23,7 @@ import { Link } from 'react-router-dom';
 const TutorialHeader = () => (
   <HeaderContainer
     render={({ isSideNavExpanded, onClickSideNavExpand }) => (
-      <Header aria-label="Carbon Tutorial">
+      <Header aria-label="IBM Cloud Pak for Mexico">
         <SkipToContent />
         <HeaderMenuButton
           aria-label="Open menu"
@@ -31,11 +31,11 @@ const TutorialHeader = () => (
           isActive={isSideNavExpanded}
         />
         <HeaderName element={Link} to="/" prefix="IBM">
-          Carbon Tutorial
+          Cloud Pak for Mexico
         </HeaderName>
-        <HeaderNavigation aria-label="Carbon Tutorial">
-          <HeaderMenuItem element={Link} to="/repos">
-            Repositories
+        <HeaderNavigation aria-label="Cloud Pak for Mexico">
+          <HeaderMenuItem element={Link} to="/quizes">
+            Friday Quizes
           </HeaderMenuItem>
         </HeaderNavigation>
         <SideNav
@@ -44,8 +44,8 @@ const TutorialHeader = () => (
           isPersistent={false}>
           <SideNavItems>
             <HeaderSideNavItems>
-              <HeaderMenuItem element={Link} to="/repos">
-                Repositories
+              <HeaderMenuItem element={Link} to="/quizes">
+                Friday Quizes
               </HeaderMenuItem>
             </HeaderSideNavItems>
           </SideNavItems>

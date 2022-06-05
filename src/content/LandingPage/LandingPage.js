@@ -29,32 +29,31 @@ const LandingPage = () => {
         <div className="bx--col-lg-16">
           <Breadcrumb noTrailingSlash aria-label="Page navigation">
             <BreadcrumbItem>
-              <a href="/">Getting started</a>
+              <a href="/">Inicio</a>
             </BreadcrumbItem>
           </Breadcrumb>
           <h1 className="landing-page__heading">
-            Design &amp; build with Carbon
+            Herramientas para tu Upskill
           </h1>
         </div>
       </div>
       <div className="bx--row landing-page__r2">
         <div className="bx--col bx--no-gutter">
           <Tabs {...props.tabs} aria-label="Tab navigation">
-            <Tab {...props.tab} label="About">
+            <Tab {...props.tab} label="¿Qué es?">
               <div className="bx--grid bx--grid--no-gutter bx--grid--full-width">
                 <div className="bx--row landing-page__tab-content">
                   <div className="bx--col-md-4 bx--col-lg-7">
                     <h2 className="landing-page__subheading">
-                      What is Carbon?
+                      ¿Qué es esta aplicación?
                     </h2>
                     <p className="landing-page__p">
-                      Carbon is IBM’s open-source design system for digital
-                      products and experiences. With the IBM Design Language as
-                      its foundation, the system consists of working code,
-                      design tools and resources, human interface guidelines,
-                      and a vibrant community of contributors.
+                      Este es un sistema desarrollado por IBM Technology Mexico
+                      para integrar herramientas técnicas para tu entrenamiento.
+                      Usa el menú para acceder a las funciones de esta
+                      aplicación.
                     </p>
-                    <Button>Learn more</Button>
+                    <Button>Aprende más</Button>
                   </div>
                   <div className="bx--col-md-4 bx--offset-lg-1 bx--col-lg-8">
                     <img
@@ -66,22 +65,23 @@ const LandingPage = () => {
                 </div>
               </div>
             </Tab>
-            <Tab {...props.tab} label="Design">
+            <Tab {...props.tab} label="Diseño">
               <div className="bx--grid bx--grid--no-gutter bx--grid--full-width">
                 <div className="bx--row landing-page__tab-content">
                   <div className="bx--col-lg-16">
-                    Rapidly build beautiful and accessible experiences. The
-                    Carbon kit contains all resources you need to get started.
+                    Esta aplicación aprovecha el lenguaje de diseño Open Source
+                    llamada Carbon. Con ella podemos crear rápidamente
+                    aplicaciones con estándares muy altos de experiencia de
+                    usuario.
                   </div>
                 </div>
               </div>
             </Tab>
-            <Tab {...props.tab} label="Develop">
+            <Tab {...props.tab} label="Autores">
               <div className="bx--grid bx--grid--no-gutter bx--grid--full-width">
                 <div className="bx--row landing-page__tab-content">
                   <div className="bx--col-lg-16">
-                    Carbon provides styles and components in Vanilla, React,
-                    Angular, and Vue for anyone building on the web.
+                    Aplicación creada por José Luis Rodríguez y Alfredo López.
                   </div>
                 </div>
               </div>
@@ -89,20 +89,15 @@ const LandingPage = () => {
           </Tabs>
         </div>
       </div>
-      <InfoSection heading="The Principles" className="landing-page__r3">
+      <InfoSection heading="Principios" className="landing-page__r3">
         <InfoCard
-          heading="Carbon is Open"
-          body="It's a distributed effort, guided by the principles of the open-source movement. Carbon's users are also it's makers, and everyone is encouraged to contribute."
+          heading="Compartir para crecer"
+          body="La idea de esta aplicación es que sea una base de aprendizaje para el upskill de todos en IBM Technology Mexico y no solo para el team técnico sino de ventas."
           icon={<PersonFavorite32 />}
         />
         <InfoCard
-          heading="Carbon is Modular"
-          body="Carbon's modularity ensures maximum flexibility in execution. It's components are designed to work seamlessly with each other, in whichever combination suits the needs of the user."
-          icon={<Application32 />}
-        />
-        <InfoCard
-          heading="Carbon is Consistent"
-          body="Based on the comprehensive IBM Design Language, every element and component of Carbon was designed from the ground up to work elegantly together to ensure consistent, cohesive user experiences."
+          heading="Demostrar para ganar"
+          body="Una buena historia, una buena articulación técnica y alineación con las necesidades de nuestros clientes crean la fórmula para ganar el mercado."
           icon={<Globe32 />}
         />
       </InfoSection>
