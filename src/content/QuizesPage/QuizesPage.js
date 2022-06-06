@@ -17,6 +17,8 @@ const QuizesPage = () => {
   const [answered, setAnswered] = useState(false);
   const [answerSelected, setAnswerSelected] = useState('');
   const [resultsSent, setResultsSent] = useState(false);
+  const [questionCode, setQuestionCode] = useState(0);
+  const [arriveCode, setArriveCode] = useState(0);
 
   function useInterval(callback, delay) {
     const savedCallback = useRef();
@@ -55,6 +57,10 @@ const QuizesPage = () => {
       answered: true,
       questionId: polledData.question.id,
       optionSelected: answerSelected,
+      answerCode:
+        polledData.question.questionTimeSecs * 1000 -
+        Date.now().valueOf() +
+        arriveCode,
     });
     setAnswers(new Map(newMap));
     setAnswerSelected('');
@@ -69,6 +75,7 @@ const QuizesPage = () => {
         console.log(data);
         setIsLoading(false);
         setPolledData(data);
+        setQuestionCode(data.questionCode);
         setAnswered(false);
         if (polledData.status == 'started') {
           let answersMap = new Map();
@@ -86,9 +93,8 @@ const QuizesPage = () => {
       fetch('http://localhost:3001/question/poll')
         .then(response => response.json())
         .then(data => {
-          debugger;
-          console.debug(data);
-          console.debug(answers);
+          console.debug(JSON.stringify(data));
+          console.debug(JSON.stringify(answers));
           setPolledData(data);
           //console.debug("ST4 (polledData.status == 'finished'): " + (polledData.status == 'finished'));
           //console.debug("ST4 (!resultsSent):" + (!resultsSent));
@@ -102,12 +108,12 @@ const QuizesPage = () => {
           ) {
             setAnswered(false);
             setResultsSent(false);
-            setAnswers(new Map());
             console.log('ST0');
           }
 
           //Si ya inició y no he contestado nada:
           //El mapa es de tamaño cero. Activa boton para responder
+          //inicia con el código T1
           if (
             polledData.status == 'started' &&
             !answered &&
@@ -115,6 +121,8 @@ const QuizesPage = () => {
           ) {
             setAnswered(false);
             setResultsSent(false);
+            setQuestionCode(polledData.questionCode);
+            setArriveCode(Date.now().valueOf());
             console.log('ST1');
           }
 
@@ -132,6 +140,7 @@ const QuizesPage = () => {
 
           //Si ya inició y ya contesté, y llega una pregunta nueva:
           //cuando el id de la pregunta no está en el mapa
+          //Inicia con T1
           if (
             polledData.status == 'started' &&
             answered &&
@@ -140,13 +149,20 @@ const QuizesPage = () => {
           ) {
             setAnswered(false);
             setResultsSent(false);
+            setQuestionCode(polledData.questionCode);
+            setArriveCode(Date.now().valueOf());
             console.log('ST3');
             setAnswerSelected('');
           }
 
           //Si ya inició y ya contesté, y llega una pregunta nueva:
           //cuando el id de la pregunta no está en el mapa
-          if (polledData.status == 'finished' && !resultsSent) {
+          if (
+            polledData.status == 'finished' &&
+            !resultsSent &&
+            username != '' &&
+            answers.size > 0
+          ) {
             console.log('ST4');
             let results = prepareResultsToObject(username, answers);
             console.log('Sending results: ' + JSON.stringify(results));
@@ -163,6 +179,7 @@ const QuizesPage = () => {
               .then(data => {
                 console.log('Results Sent: ' + JSON.stringify(data));
                 setResultsSent(true);
+                setAnswers(new Map());
               })
               .catch(error => {
                 console.error('There was an error!', error);
@@ -173,7 +190,6 @@ const QuizesPage = () => {
   }, 3000);
 
   const handleUsername = username => {
-    debugger;
     console.log(username);
     setUsername(username);
   };
