@@ -4596,7 +4596,7 @@ __metadata:
     react-dom: 16.10.0
     react-router-dom: 5.0.0
     react-scripts: 4.0.1
-    sass: ^1.52.2
+    sass: ^1.52.3
     wait-for-expect: 3.0.2
   languageName: unknown
   linkType: soft
@@ -14423,16 +14423,16 @@ resolve@1.18.1:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.52.2":
-  version: 1.52.2
-  resolution: "sass@npm:1.52.2"
+"sass@npm:^1.52.3":
+  version: 1.52.3
+  resolution: "sass@npm:1.52.3"
   dependencies:
     chokidar: ">=3.0.0 <4.0.0"
     immutable: ^4.0.0
     source-map-js: ">=0.6.2 <2.0.0"
   bin:
     sass: sass.js
-  checksum: 8f9f76b5a482ab74c5b2e4fb4a9e0492300c8547a297c99e42e08afb2bd0983132fd4b1d9166a532471295389c72ee8dab05e0449a24f7f323190a733ab05172
+  checksum: 523afd1e8aefef10cc5816f470b0275442fb13ee61c4307d968624a7bf87fedb514804db01e208de21a46bc4a27d66bf750d5c2a8a6acfe710ebb81e65ae2121
   languageName: node
   linkType: hard
 
